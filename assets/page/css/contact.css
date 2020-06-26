@@ -1,0 +1,11 @@
+body {
+    margin-top: 20px;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+#message {
+    display: none;
+}

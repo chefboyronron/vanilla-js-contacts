@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/libs/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/page/css/contact.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row-fluid title">
+            <h2>My Contacts</h2>
+        </div>  
+        <div class="row">
+                
+            <div class="span4">
+            
+                <form action="post" method="jsPost" class="contact-form" id="contact-form">
+                
+                    <div class="control-group">
+                        <label class="control-label" for="name">Name</label>
+                        <div class="controls">
+                            <input type="text" name="name" id="name" class="text-field">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="phone">Contact Number</label>
+                        <div class="controls">
+                            <input type="text" name="phone" id="phone" class="text-field">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="email">Email Address</label>
+                        <div class="controls">
+                            <input type="text" name="email" id="email" class="text-field">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="submit-button">Save</button>
+
+                </form>   
+
+                <div id="message" class="alert text-center"></div>
+
+
+            </div>
+
+            <div class="span8">
+
+                <table class="table table-hover" id="contact-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Contact Number</th>
+                            <th>Email Address</th>
+                            <th><div class="text-center">Action</div></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script type="text/javascript" src="assets/page/js/contact.js"></script>
+</body>
+</html>
