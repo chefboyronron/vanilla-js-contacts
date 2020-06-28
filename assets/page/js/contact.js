@@ -64,7 +64,7 @@ Store.prototype.displayContact = function() {
     contacts.forEach(function(contact){
         const ui  = new ContactUI();
         // Add book to UI
-        ui.addContact(contact);
+        ui.addContact(contact, true);
     });
 }
 
@@ -82,7 +82,7 @@ ContactUI.prototype.noRecordDOM = function() {
 }
 
 
-ContactUI.prototype.addContact = function(contact) {
+ContactUI.prototype.addContact = function(contact, is_initial) {
     let name = contact.name,
         phone = contact.phone,
         email = contact.email,
@@ -95,16 +95,20 @@ ContactUI.prototype.addContact = function(contact) {
 
     if( name === '' || phone === '' || email === '' ) {
 
-        this.showMessage('Please fill up all required fields.', message_type);
+        if( typeof is_initial === 'undefined' ) {
+            
+            this.showMessage('Please fill up all required fields.', message_type);
 
-        // add error border on text fields
-        text_fields.forEach(function(e, i){
-            if( e.value === '' ) {
-                e.parentElement.parentElement.classList.add(message_type);
-            } else {
-                e.parentElement.parentElement.classList.remove(message_type);
-            }
-        });
+            // add error border on text fields
+            text_fields.forEach(function(e, i){
+                if( e.value === '' ) {
+                    e.parentElement.parentElement.classList.add(message_type);
+                } else {
+                    e.parentElement.parentElement.classList.remove(message_type);
+                }
+            });
+
+        }
 
     } else {
         let emptylist = table_body.querySelector('.info');
